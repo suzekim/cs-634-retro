@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Homepage from "./components/Homepage.js";
 import Login from "./components/Login.js";
 import Register from "./components/Register.js";
 import "./App.scss";
@@ -8,6 +9,12 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Switch>
+				<Route
+					exact
+					path="/"
+					name="Homepage"
+					render={props => <Homepage {...props} />}
+				/>
 				<Route
 					exact
 					path="/login"
