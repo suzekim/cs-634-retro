@@ -1,15 +1,27 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Login from "./components/Login.js";
+import Register from "./components/Register.js";
+import "./App.scss";
 
 function App() {
 	return (
-		<div className="App">
-			<form>
-				<label>Name: </label>
-				<input type="text" />
-			</form>
-		</div>
+		<BrowserRouter>
+			<Switch>
+				<Route
+					exact
+					path="/login"
+					name="Login"
+					render={props => <Login {...props} />}
+				/>
+				<Route
+					exact
+					path="/register"
+					name="Register"
+					render={props => <Register {...props} />}
+				/>
+			</Switch>
+		</BrowserRouter>
 	);
 }
 
