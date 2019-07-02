@@ -1,131 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <title>CS634 - Retro App</title>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="theme-color" content="#000000" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
   <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="shortcut icon" href="%PUBLIC_URL%/icon.png" />
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-</head>
-
-<!-- BODY options, add following classes to body to change options
-
-  // Header options
-  1. '.header-fixed'					- Fixed Header
-
-  // Brand options
-  1. '.brand-minimized'       - Minimized brand (Only symbol)
-
-  // Sidebar options
-  1. '.sidebar-fixed'					- Fixed Sidebar
-  2. '.sidebar-hidden'				- Hidden Sidebar
-  3. '.sidebar-off-canvas'		- Off Canvas Sidebar
-  4. '.sidebar-minimized'			- Minimized Sidebar (Only icons)
-  5. '.sidebar-compact'			  - Compact Sidebar
-
-  // Aside options
-  1. '.aside-menu-fixed'			- Fixed Aside Menu
-  2. '.aside-menu-hidden'			- Hidden Aside Menu
-  3. '.aside-menu-off-canvas'	- Off Canvas Aside Menu
-
-  // Breadcrumb options
-  1. '.breadcrumb-fixed'			- Fixed Breadcrumb
-
-  // Footer options
-  1. '.footer-fixed'					- Fixed footer
-
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
   -->
-
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
   <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  <!-- javascript libraries -->
-  <script type="text/javascript" src="/theme/js/jquery.js"></script>
-  <script type="text/javascript" src="/theme/js/modernizr.js"></script>
-  <script type="text/javascript" src="/theme/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="/theme/js/jquery.easing.1.3.js"></script>
-  <script type="text/javascript" src="/theme/js/skrollr.min.js"></script>
-  <script type="text/javascript" src="/theme/js/smooth-scroll.js"></script>
-  <script type="text/javascript" src="/theme/js/jquery.appear.js"></script>
-  <!-- menu navigation -->
-  <script type="text/javascript" src="/theme/js/bootsnav.js"></script>
-  <script type="text/javascript" src="/theme/js/jquery.nav.js"></script>
-  <!-- animation -->
-  <script type="text/javascript" src="/theme/js/wow.min.js"></script>
-  <!-- page scroll -->
-  <script type="text/javascript" src="/theme/js/page-scroll.js"></script>
-  <!-- swiper carousel -->
-  <script type="text/javascript" src="/theme/js/swiper.min.js"></script>
-  <!-- counter -->
-  <script type="text/javascript" src="/theme/js/jquery.count-to.js"></script>
-  <!-- parallax -->
-  <script type="text/javascript" src="/theme/js/jquery.stellar.js"></script>
-  <!-- magnific popup -->
-  <script type="text/javascript" src="/theme/js/jquery.magnific-popup.min.js"></script>
-  <!-- portfolio with shorting tab -->
-  <script type="text/javascript" src="/theme/js/isotope.pkgd.min.js"></script>
-  <!-- images loaded -->
-  <script type="text/javascript" src="/theme/js/imagesloaded.pkgd.min.js"></script>
-  <!-- pull menu -->
-  <script type="text/javascript" src="/theme/js/classie.js"></script>
-  <script type="text/javascript" src="/theme/js/hamburger-menu.js"></script>
-  <!-- counter  -->
-  <script type="text/javascript" src="/theme/js/counter.js"></script>
-  <!-- fit video  -->
-  <script type="text/javascript" src="/theme/js/jquery.fitvids.js"></script>
-  <!-- equalize -->
-  <script type="text/javascript" src="/theme/js/equalize.min.js"></script>
-  <!-- skill bars  -->
-  <script type="text/javascript" src="/theme/js/skill.bars.jquery.js"></script>
-  <!-- justified gallery  -->
-  <script type="text/javascript" src="/theme/js/justified-gallery.min.js"></script>
-  <!--pie chart-->
-  <script type="text/javascript" src="/theme/js/jquery.easypiechart.min.js"></script>
-  <!-- instagram -->
-  <script type="text/javascript" src="/theme/js/instafeed.min.js"></script>
-  <!-- retina -->
-  <!-- <script type="text/javascript" src="/theme/js/retina.min.js"></script> -->
-  <!-- revolution -->
-  <script type="text/javascript" src="/theme/revolution/js/jquery.themepunch.tools.min.js"></script>
-  <script type="text/javascript" src="/theme/revolution/js/jquery.themepunch.revolution.min.js"></script>
-  <!-- revolution slider extensions (load below extensions JS files only on local file systems to make the slider work! The following part can be removed on server for on demand loading) -->
-  <!--<script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
-            <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-            <script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-            <script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-            <script type="text/javascript" src="revolution/js/extensions/revolution.extension.migration.min.js"></script>
-            <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-            <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-            <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-            <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>-->
-  <!-- setting -->
-  <script type="text/javascript" src="/theme/js/main.js"></script>
+    Notice the use of %PUBLIC_URL% in the tags above.
+    It will be replaced with the URL of the `public` folder during the build.
+    Only files inside the `public` folder can be referenced from the HTML.
+    Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+    work correctly both with client-side routing and a non-root public URL.
+    Learn how to configure a non-root public URL by running `npm run build`.
+  -->
+  <title>React App</title>
+</head>
+<body>
+<noscript>
+  You need to enable JavaScript to run this app.
+</noscript>
+<div id="root"></div>
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
 </body>
-
 </html>
