@@ -18,6 +18,6 @@ describe('Input', function () {
         const wrapper = mount(<FeedbackField {...{addFeedback: addFeedbackSpy }}/>);
         wrapper.simulate('keypress', {key: 'Enter'});
 
-        expect(addFeedbackSpy).to.have.been.calledOnce;
+        expect(addFeedbackSpy).calledOnce;
     })
 });
