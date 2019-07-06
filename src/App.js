@@ -11,7 +11,9 @@ function App() {
 				</CardBody>
 			</Card>
 			<InputGroup className="input">
-				<Input placeholder="What went well? What could have gone better?"/>
+				<Input
+					placeholder="What went well? What could have gone better?"
+				/>
 			</InputGroup>
 		</div>
 	);
