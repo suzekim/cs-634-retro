@@ -1,38 +1,30 @@
 import * as React from 'react';
+import { connect } from 'react-redux'
+import { addFeedback } from "../actions/feedbackActions";
 import TextField from '@material-ui/core/TextField';
 
-type Props = {
-    addFeedback: string => {}
+
+const FeedbackField = ({dispatch}) => {
+    let input;
+
+    return (
+        <TextField
+            style={{
+                paddingTop: '20px',
+                paddingLeft:'14px',
+                width: '50%'
+            }}
+            placeholder="What went well? What could have gone better?"
+            inputRef={node => input = node}
+            onKeyPress={(e) => {
+                if (e.key === 'Enter') {
+                    console.log(input.value);
+                    dispatch(addFeedback(input.value));
+                    input.value=''
+                }
+            }}
+        />
+    )
 }
 
-type State = {
-    value: string
-}
-
-export class FeedbackField extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-        this.state = {value:''}
-
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(e) {
-        this.setState({value: e.target.value});
-    }
-
-    render() {
-        return (
-            <TextField
-                placeholder="What went well? What could have gone better?"
-                onKeyPress={(e) => {
-                    if (e.key === 'Enter') {
-                        this.props.addFeedback(this.state.value);
-                    }
-                }}
-            />
-        )
-    }
-}
-
-export default FeedbackField
+export default connect()(FeedbackField)

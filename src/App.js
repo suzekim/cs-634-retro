@@ -1,6 +1,7 @@
 import React from "react";
 import {Card, CardBody} from "reactstrap";
-import {FeedbackField} from "./components/FeedbackField";
+import FeedbackField from "./components/FeedbackField";
+import FeedbackList from "./components/FeedbackList";
 
 function App() {
 	return (
@@ -10,7 +11,8 @@ function App() {
 					<div style={{fontSize: "40px"}}>Retro</div>
 				</CardBody>
 			</Card>
-			<FeedbackField/>
+			<FeedbackField />
+			<FeedbackList/>
 		</div>
 	);
 }

@@ -1,4 +1,4 @@
-import feedbacks from '../../src/reducers/feedbackReducer'
+import feedbacks from '../../src/reducers/feedbacks'
 
 describe('feedback reducer',  () => {
     it('handles initialState', () => {

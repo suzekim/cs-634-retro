@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import feedbacks from './feedbackReducer'
+import feedbacks from './feedbacks'
 
 export default combineReducers({
     feedbacks
