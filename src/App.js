@@ -1,5 +1,4 @@
 import React from "react";
-import "./components/Homepage.css";
 import {Card, CardBody} from "reactstrap";
 import {FeedbackField} from "./components/FeedbackField";
 
