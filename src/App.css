@@ -23,6 +23,17 @@
   color: #61dafb;
 }
 
+.header {
+  width: "25%";
+  padding: 15px
+}
+
+.headerBody {
+  font-family: 'Oxygen', sans-serif;
+  color: #4d585e;
+  font-size: 50px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -32,3 +43,5 @@
     transform: rotate(360deg);
   }
 }
+
+@import url('https://fonts.googleapis.com/css?family=Oxygen:700&display=swap');
