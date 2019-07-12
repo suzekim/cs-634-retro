@@ -1,6 +1,12 @@
 import { combineReducers } from 'redux'
-import feedbacks from './feedbacks'
+import positives from './positives'
+import negatives from "./negatives";
+import actions from "./actions";
 
-export default combineReducers({
-    feedbacks
-})
+const retroApp = combineReducers({
+    positives,
+    negatives,
+    actions
+});
+
+export default retroApp;

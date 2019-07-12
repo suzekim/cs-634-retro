@@ -44,26 +44,26 @@ function App() {
 						<Grid container spacing={3}>
 							<Grid item xs={4}>
 								<Paper className={`${classes.paper}`}>
-									<FeedbackField placeholder="What went well?" />
+									<FeedbackField placeholder="What went well?" columnType="positive"/>
 								</Paper>
 								<div className={classes.paperList}>
-									<FeedbackList />
+									<FeedbackList columnType="positives"/>
 								</div>
 							</Grid>
 							<Grid item xs={4}>
 								<Paper className={`${classes.paper}`}>
-									<FeedbackField placeholder="What could have gone better?" />
+									<FeedbackField placeholder="What could have gone better?"columnType="negative"/>
 								</Paper>
 								<div className={classes.paperList}>
-									<FeedbackList />
+									<FeedbackList columnType="negatives"/>
 								</div>
 							</Grid>
 							<Grid item xs={4}>
 								<Paper className={`${classes.paper}`}>
-									<FeedbackField placeholder="Action Items" />
+									<FeedbackField placeholder="Action Items" columnType="action"/>
 								</Paper>
 								<div className={classes.paperList}>
-									<FeedbackList />
+									<FeedbackList columnType="actions"/>
 								</div>
 							</Grid>
 						</Grid>

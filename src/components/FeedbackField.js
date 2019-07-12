@@ -1,11 +1,10 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { addFeedback } from "../actions/feedbackActions";
+import {addAction, addNegative, addPositive} from "../actions/feedbackActions";
 import TextField from "@material-ui/core/TextField";
 
-const FeedbackField = ({ dispatch, placeholder }) => {
+const FeedbackField = ({ dispatch, placeholder, columnType }) => {
 	let input;
-
 	return (
 		<TextField
 			style={{
@@ -16,8 +15,13 @@ const FeedbackField = ({ dispatch, placeholder }) => {
 			inputRef={node => (input = node)}
 			onKeyPress={e => {
 				if (e.key === "Enter") {
-					console.log(input.value);
-					dispatch(addFeedback(input.value));
+					if (columnType === "positive") {
+						dispatch(addPositive(input.value));
+					} else if (columnType === "negative") {
+						dispatch(addNegative(input.value));
+					} else {
+						dispatch(addAction(input.value))
+					}
 					input.value = "";
 				}
 			}}
