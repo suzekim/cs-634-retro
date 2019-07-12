@@ -9,12 +9,13 @@ type Props = {
 	negatives: [],
 	actions: [],
 	columnType: string
-}
+};
 
 export class FeedbackList extends React.Component<Props> {
 	render() {
 		let items;
-		const {columnType, positives, negatives, actions} = this.props;
+		const { columnType, positives, negatives, actions } = this.props;
+
 		if (columnType === "positives") {
 			items = positives;
 		} else if (columnType === "negatives") {
@@ -27,11 +28,11 @@ export class FeedbackList extends React.Component<Props> {
 			<List>
 				{items.map(item => (
 					<ListItem key={item.text}>
-						<ListItemText primary={item.text}/>
+						<ListItemText primary={item.text} />
 					</ListItem>
 				))}
 			</List>
-		)
+		);
 	}
 }
 
