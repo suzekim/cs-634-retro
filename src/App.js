@@ -44,27 +44,45 @@ function App() {
 						<Grid container spacing={3}>
 							<Grid item xs={4}>
 								<Paper className={`${classes.paper}`}>
-									<FeedbackField placeholder="What went well?" columnType="positive"/>
+									<FeedbackField
+										placeholder="What went well?"
+										columnType="positive"
+									/>
 								</Paper>
-								<div className={classes.paperList}>
-									<FeedbackList columnType="positives"/>
-								</div>
+								<Paper
+									className={`${classes.paperList}`}
+									style={{ backgroundColor: "#bed9ad" }}
+								>
+									<FeedbackList columnType="positives" />
+								</Paper>
 							</Grid>
 							<Grid item xs={4}>
 								<Paper className={`${classes.paper}`}>
-									<FeedbackField placeholder="What could have gone better?"columnType="negative"/>
+									<FeedbackField
+										placeholder="What could have gone better?"
+										columnType="negative"
+									/>
 								</Paper>
-								<div className={classes.paperList}>
-									<FeedbackList columnType="negatives"/>
-								</div>
+								<Paper
+									className={`${classes.paperList}`}
+									style={{ backgroundColor: "#d9b2ad" }}
+								>
+									<FeedbackList columnType="negatives" />
+								</Paper>
 							</Grid>
 							<Grid item xs={4}>
 								<Paper className={`${classes.paper}`}>
-									<FeedbackField placeholder="Action Items" columnType="action"/>
+									<FeedbackField
+										placeholder="Action Items"
+										columnType="action"
+									/>
 								</Paper>
-								<div className={classes.paperList}>
-									<FeedbackList columnType="actions"/>
-								</div>
+								<Paper
+									className={`${classes.paperList}`}
+									style={{ backgroundColor: "#adc8d9" }}
+								>
+									<FeedbackList columnType="actions" />
+								</Paper>
 							</Grid>
 						</Grid>
 					</div>
