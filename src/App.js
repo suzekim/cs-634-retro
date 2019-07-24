@@ -22,8 +22,10 @@ const useStyles = makeStyles(theme => ({
 		padding: theme.spacing(0),
 		textAlign: "center",
 		marginBottom: "10px",
-		backgroundColor: "#ffffff",
-		color: theme.palette.text.secondary
+		color: "#3d4142"
+	},
+	fab: {
+		margin: theme.spacing(1)
 	}
 }));
 
@@ -49,12 +51,11 @@ function App() {
 										columnType="positive"
 									/>
 								</Paper>
-								<Paper
-									className={`${classes.paperList}`}
-									style={{ backgroundColor: "#bed9ad" }}
-								>
-									<FeedbackList columnType="positives" />
-								</Paper>
+								<FeedbackList
+									columnType="positives"
+									backgroundColor="#bed9ad"
+									classes={classes}
+								/>
 							</Grid>
 							<Grid item xs={4}>
 								<Paper className={`${classes.paper}`}>
@@ -63,12 +64,11 @@ function App() {
 										columnType="negative"
 									/>
 								</Paper>
-								<Paper
-									className={`${classes.paperList}`}
-									style={{ backgroundColor: "#d9b2ad" }}
-								>
-									<FeedbackList columnType="negatives" />
-								</Paper>
+								<FeedbackList
+									columnType="negatives"
+									backgroundColor="#d9b2ad"
+									classes={classes}
+								/>
 							</Grid>
 							<Grid item xs={4}>
 								<Paper className={`${classes.paper}`}>
@@ -77,12 +77,11 @@ function App() {
 										columnType="action"
 									/>
 								</Paper>
-								<Paper
-									className={`${classes.paperList}`}
-									style={{ backgroundColor: "#adc8d9" }}
-								>
-									<FeedbackList columnType="actions" />
-								</Paper>
+								<FeedbackList
+									columnType="actions"
+									backgroundColor="#adc8d9"
+									classes={classes}
+								/>
 							</Grid>
 						</Grid>
 					</div>

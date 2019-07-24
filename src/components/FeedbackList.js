@@ -1,7 +1,6 @@
 import React from "react";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
+import { List, Paper, ListItem, ListItemText, Fab } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
 import { connect } from "react-redux";
 
 type Props = {
@@ -14,7 +13,14 @@ type Props = {
 export class FeedbackList extends React.Component<Props> {
 	render() {
 		let items;
-		const { columnType, positives, negatives, actions } = this.props;
+		const {
+			columnType,
+			positives,
+			negatives,
+			actions,
+			backgroundColor,
+			classes
+		} = this.props;
 
 		if (columnType === "positives") {
 			items = positives;
@@ -27,9 +33,24 @@ export class FeedbackList extends React.Component<Props> {
 		return (
 			<List>
 				{items.map(item => (
-					<ListItem key={item.text}>
-						<ListItemText primary={item.text} />
-					</ListItem>
+					<Paper
+						className={classes.paperList}
+						style={{
+							backgroundColor: `${backgroundColor}`
+						}}
+					>
+						<ListItem key={item.text} style={{ padding: "5px" }}>
+							<ListItemText primary={item.text} style={{ padding: "10px" }} />
+							<Fab
+								color="#a2a7ab"
+								size="small"
+								aria-label="Add"
+								className={classes.fab}
+							>
+								<AddIcon size="small" />
+							</Fab>
+						</ListItem>
+					</Paper>
 				))}
 			</List>
 		);
