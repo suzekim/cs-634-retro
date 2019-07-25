@@ -41,14 +41,16 @@ export class FeedbackList extends React.Component<Props> {
 					>
 						<ListItem key={item.text} style={{ padding: "5px" }}>
 							<ListItemText primary={item.text} style={{ padding: "10px" }} />
-							<Fab
-								color="#a2a7ab"
-								size="small"
-								aria-label="Add"
-								className={classes.fab}
-							>
-								<AddIcon size="small" />
-							</Fab>
+							{columnType === "actions" ? (
+								<Fab
+									color="#a2a7ab"
+									size="small"
+									aria-label="Add"
+									className={classes.fab}
+								>
+									<AddIcon size="small" />
+								</Fab>
+							) : null}
 						</ListItem>
 					</Paper>
 				))}
