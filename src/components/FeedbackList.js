@@ -1,7 +1,7 @@
 import React from "react";
-import { List, Paper, ListItem, ListItemText, Fab } from "@material-ui/core";
-import AddIcon from "@material-ui/icons/Add";
+import { List, Paper } from "@material-ui/core";
 import { connect } from "react-redux";
+import {FeedbackCard} from "./FeedbackCard";
 
 type Props = {
 	positives: [],
@@ -39,19 +39,7 @@ export class FeedbackList extends React.Component<Props> {
 							backgroundColor: `${backgroundColor}`
 						}}
 					>
-						<ListItem key={item.text} style={{ padding: "5px" }}>
-							<ListItemText primary={item.text} style={{ padding: "10px" }} />
-							{columnType === "actions" ? (
-								<Fab
-									color="#a2a7ab"
-									size="small"
-									aria-label="Add"
-									className={classes.fab}
-								>
-									<AddIcon size="small" />
-								</Fab>
-							) : null}
-						</ListItem>
+						<FeedbackCard content={item.text} columnType={columnType} classes={classes}/>
 					</Paper>
 				))}
 			</List>
