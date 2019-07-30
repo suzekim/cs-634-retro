@@ -1,6 +1,6 @@
 import React from "react";
 import {ListItem, ListItemText, Fab} from "@material-ui/core";
-import AddIcon from "@material-ui/icons/Add";
+import EditIcon from "@material-ui/icons/Edit";
 import TextField from "@material-ui/core/TextField";
 
 type Props = {
@@ -51,7 +51,7 @@ export class FeedbackCard extends React.Component<Props, State> {
                             className={classes.fab}
                             onClick={this.handleClick}
                         >
-                            <AddIcon size="small"/>
+                            <EditIcon size="small"/>
                         </Fab>
                     ) : null}
                 </ListItem>
