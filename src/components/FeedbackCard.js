@@ -25,7 +25,6 @@ export class FeedbackCard extends React.Component<Props, State> {
     }
 
     handleClick() {
-        console.log('clicked!')
         this.setState(state => ({
             edit: !state.edit
         }));
