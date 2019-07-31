@@ -1,7 +1,7 @@
 import React from "react";
 import { List, Paper } from "@material-ui/core";
 import { connect } from "react-redux";
-import {FeedbackCard} from "./FeedbackCard";
+import { FeedbackCard } from "./FeedbackCard";
 
 type Props = {
 	positives: [],
@@ -32,14 +32,17 @@ export class FeedbackList extends React.Component<Props> {
 
 		return (
 			<List>
-				{items.map(item => (
+				{items.map((item, index) => (
 					<Paper
 						className={classes.paperList}
-						style={{
-							backgroundColor: `${backgroundColor}`
-						}}
+						style={{ backgroundColor: `${backgroundColor}`, padding: "5px" }}
+						key={index}
 					>
-						<FeedbackCard content={item.text} columnType={columnType} classes={classes}/>
+						<FeedbackCard
+							content={item.text}
+							columnType={columnType}
+							classes={classes}
+						/>
 					</Paper>
 				))}
 			</List>
