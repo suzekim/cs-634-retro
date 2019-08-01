@@ -29,7 +29,8 @@ export class FeedbackCard extends React.Component<Props, State> {
 
 	handleEdit() {
 		this.setState(state => ({
-			edit: !state.edit
+			edit: !state.edit,
+			isComplete: false
 		}));
 	}
 
